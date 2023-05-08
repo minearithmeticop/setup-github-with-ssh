@@ -3,12 +3,12 @@ Guide to setup github when use multiple git account (can use with github/gitlab)
 
 ## Procedure
 
-1. Gen ssh key
+### 1. Gen ssh key
 ```bash
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 ```
 
-2. Enter name for ssh key
+### 2. Enter name for ssh key
 ```
 Generating public/private rsa key pair.
 Enter file in which to save the key (/Users/me/.ssh/id_rsa): <name>
@@ -32,7 +32,7 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-2. Set config file
+### 3. Set config file
 ```note
 cd .ssh
 nano/code config
@@ -56,19 +56,20 @@ PreferredAuthentications publickey
 IdentitiesOnly yes
 ```
 
-3. Setup key on github
-```
-#Enter to this link https://github.com/settings/keys
-![PAGE!](./images/setting_key_page.png)
+### 4. Setup key on github
 
-#Click New SSH key
-![PAGE!](./images/btn_ssh_key.png)
+  #### 4.1 Enter to this link https://github.com/settings/keys
 
-#Enter Title and copy data in <name>.pub from .ssh
-![PAGE!](./images/setting_key_add_page.png)
+   ![PAGE](images/setting_key_page.png)
 
-#Use cat <name>.pub
-ssh-rsa xxxxxx your_email@example.com <- copy this
+  #### 4.2 Click New SSH key
+  
+   ![PAGE!](images/btn_ssh_key.png)
 
-#Click Add SSH key
-```
+  #### 4.3 Enter Title and copy data in <name>.pub from .ssh
+   ![PAGE!](images/setting_key_add_page.png)
+
+  #### 4.4 Use cat <name>.pub
+    ssh-rsa xxxxxx your_email@example.com <- copy this
+
+  #### 4.5 Click Add SSH key
